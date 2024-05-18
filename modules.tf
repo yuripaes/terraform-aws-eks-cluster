@@ -13,7 +13,7 @@ module "eks_cluster" {
   public-subnet-1b = module.eks_network.subnet_pub_1b
 }
 
-module "eks_managed-node-group" {
+module "eks_managed_node_group" {
   source            = "./modules/managed-node-group"
   cluster_name      = module.eks_cluster.cluster_name
   project_name      = var.project_name
@@ -22,7 +22,7 @@ module "eks_managed-node-group" {
   private-subnet-1b = module.eks_network.subnet_priv_1b
 }
 
-module "eks_aws-load-balancer-controller" {
+module "eks_aws_load_balancer_controller" {
   source       = "./modules/aws-load-balancer-controller"
   project_name = var.project_name
   tags         = local.tags
