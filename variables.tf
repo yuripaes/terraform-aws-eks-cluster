@@ -5,5 +5,15 @@ variable "cidr_block" {
 
 variable "project_name" {
   type        = string
-  description = "To be used to name resources (Name Tag)"
+  description = "It will compose the name resources (Name Tag)"
+}
+
+variable "region" {
+  type        = string
+  description = "AWS Region used to create the resources"
+}
+
+variable "tags" {
+  type        = map(any)
+  description = "Tags to be passed to each module creation"
 }
